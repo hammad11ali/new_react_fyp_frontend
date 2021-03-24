@@ -24,6 +24,7 @@ class Show extends Component {
         "&n=" +
         this.state.n;
       axios.get(url).then((res) => {
+        console.log(res.data.Content);
         this.setState({
           questions: res.data.Content,
         });
@@ -85,7 +86,7 @@ class Show extends Component {
               {obj.options.map((op, k) => {
                 return <p key={k}>{op}</p>;
               })}
-              <p>Correct Option: {obj.correctIndex}</p>
+              <p>Correct Option: {obj.correct_index}</p>
               <p>Detail: {obj.detail}</p>
             </div>
           );
